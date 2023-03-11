@@ -92,6 +92,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external\GLFW\glfw-3.3.8.bin.WIN32\lib-vc2019\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,6 +110,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external\GLFW;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external\GLFW\glfw-3.3.8.bin.WIN32\lib-vc2019\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -148,6 +152,8 @@
     <None Include="src\shaders\vertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="external\GLFW\glfw-3.3.8.bin.WIN32\include\GLFW\glfw3.h" />
+    <ClInclude Include="external\GLFW\glfw-3.3.8.bin.WIN32\include\GLFW\glfw3native.h" />
     <ClInclude Include="external\include\glad\glad.h" />
     <ClInclude Include="external\include\KHR\khrplatform.h" />
     <ClInclude Include="src\ShaderHandler.h" />

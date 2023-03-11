@@ -1,4 +1,4 @@
 ﻿  main.cpp
-  ShaderHandler.cpp
-  Generating Code...
+  LINK : C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\Debug\GPUParticles.exe not found or not built by the last incremental link; performing full link
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   GPUParticles.vcxproj -> C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\Debug\GPUParticles.exe
