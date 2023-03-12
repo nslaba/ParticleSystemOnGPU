@@ -5,8 +5,8 @@
 
 int main() {
 	/* STEP 1: compile the Processing sketch*/
-	std::string sketchPath = "";
-	std::string outputPath = "";
+	std::string sketchPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\processingSketch\HermiteSplineSketch_pde";
+	std::string outputPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\output";
 	Processing* processingHandler;
 	processingHandler->buildSketch(sketchPath, outputPath);
 

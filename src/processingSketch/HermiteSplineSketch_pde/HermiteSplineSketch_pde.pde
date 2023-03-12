@@ -17,6 +17,7 @@
    // white background
    background(255);
    stroke(0);
+   curve(clickedX, clickedY, dragX, dragY, 300, 300, 400, 400);
       
  }
  
