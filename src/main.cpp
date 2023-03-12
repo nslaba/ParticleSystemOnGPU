@@ -1,10 +1,16 @@
 #include "ShaderHandler.h"
+#include "Processing.h"
 #include <../../../../../../PROJECT/project/GPUParticles/GPUParticles/external/GLFW/glfw-3.3.8.bin.WIN32/include/GLFW/glfw3.h>
 #include <iostream>
 
 int main() {
+	/* STEP 1: compile the Processing sketch*/
+	std::string sketchPath = "";
+	std::string outputPath = "";
+	Processing* processingHandler;
+	processingHandler->buildSketch(sketchPath, outputPath);
 
-	/*STEP 1: deal with display*/
+	/*STEP 2: deal with display*/
 	
 	// Initialize GLFW
 	if (!glfwInit())
