@@ -1,4 +1,21 @@
 ﻿  main.cpp
-  LINK : C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\Debug\GPUParticles.exe not found or not built by the last incremental link; performing full link
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 's': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'D': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'c': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'C': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'P': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'p': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'G': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(9,27): warning C4129: 'H': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 's': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'D': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'c': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'C': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'P': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'p': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'G': unrecognized character escape sequence
+C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\main.cpp(10,27): warning C4129: 'o': unrecognized character escape sequence
+  ShaderHandler.cpp
+  Generating Code...
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   GPUParticles.vcxproj -> C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\Debug\GPUParticles.exe

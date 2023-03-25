@@ -1,6 +1,7 @@
 #include "ShaderHandler.h"
+#include "ParticleSimulator.h"
 #include "Processing.h"
-#include <../../../../../../PROJECT/project/GPUParticles/GPUParticles/external/GLFW/glfw-3.3.8.bin.WIN32/include/GLFW/glfw3.h>
+//#include <../../../../../../PROJECT/project/GPUParticles/GPUParticles/external/GLFW/glfw-3.3.8.bin.WIN32/include/GLFW/glfw3.h>
 #include <iostream>
 
 int main() {

@@ -88,6 +88,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -104,6 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\slaba\Desktop\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,11 +147,15 @@
   <ItemGroup>
     <ClCompile Include="external\src\glad.c" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\ParticleSimulator.cpp" />
+    <ClCompile Include="src\ParticleSystem.cpp" />
     <ClCompile Include="src\Processing.cpp" />
     <ClCompile Include="src\ShaderHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shaders\FragmentShader.glsl" />
+    <None Include="src\shaders\ParticlesVertexShader.glsl" />
+    <None Include="src\shaders\PerlinVectorFieldFragmentShader.glsl" />
     <None Include="src\shaders\vertexShader.glsl" />
   </ItemGroup>
   <ItemGroup>
@@ -157,6 +163,9 @@
     <ClInclude Include="external\GLFW\glfw-3.3.8.bin.WIN32\include\GLFW\glfw3native.h" />
     <ClInclude Include="external\include\glad\glad.h" />
     <ClInclude Include="external\include\KHR\khrplatform.h" />
+    <ClInclude Include="src\Particle.h" />
+    <ClInclude Include="src\ParticleSimulator.h" />
+    <ClInclude Include="src\ParticleSystem.h" />
     <ClInclude Include="src\Processing.h" />
     <ClInclude Include="src\ShaderHandler.h" />
   </ItemGroup>

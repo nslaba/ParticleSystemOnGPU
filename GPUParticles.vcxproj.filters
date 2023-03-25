@@ -27,12 +27,24 @@
     <ClCompile Include="src\Processing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\ParticleSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ParticleSimulator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\shaders\FragmentShader.glsl">
       <Filter>Source Files</Filter>
     </None>
     <None Include="src\shaders\vertexShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="src\shaders\PerlinVectorFieldFragmentShader.glsl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="src\shaders\ParticlesVertexShader.glsl">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>
@@ -53,6 +65,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\Processing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Particle.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParticleSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ParticleSimulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
