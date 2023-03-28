@@ -22,6 +22,8 @@ class ParticleSystem {
 public:
 	ParticleSystem(unsigned int numParticles);
 	unsigned int numParticles;
+	GLuint getParticleVBO();
+	GLuint getParticleVAO();
 	void draw();
 	GLuint particleVBO;
 	GLuint particleVAO;

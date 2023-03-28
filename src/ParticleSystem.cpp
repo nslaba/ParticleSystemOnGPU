@@ -10,6 +10,14 @@ ParticleSystem::ParticleSystem(unsigned int numParticles) :
 	instantiateVBO();
 }
 
+GLuint ParticleSystem::getParticleVBO()
+{
+	return particleVBO;
+}
+GLuint ParticleSystem::getParticleVAO()
+{
+	return particleVAO;
+}
 
 void ParticleSystem::instantiateVAO()
 {

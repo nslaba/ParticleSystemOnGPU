@@ -14,6 +14,8 @@ public:
 	ShaderHandler(const char* vertexShaderPath, const char* fragmentShaderPath);
 	void use();
 
+	GLuint getProgramID();
+
 private:
 	GLuint m_program;
 	GLuint m_currentProgram;

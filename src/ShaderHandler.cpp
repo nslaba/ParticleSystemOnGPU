@@ -33,14 +33,36 @@ ShaderHandler::ShaderHandler(const char* VertexShaderPath, const char* fragmentS
 
 }
 
-std::string ShaderHandler::loadShaderFile(const char* filename) {
-	std::ifstream file(filename);
-	if (!file) {
-		throw std::runtime_error("Failed to open file: " + std::string(filename));
+GLuint ShaderHandler::getProgramID()
+{
+	if (m_currentProgram != m_program)
+	{
+		throw std::runtime_error("trying to use a new program that isn't current program");
 	}
+	else {
+		return m_program;
+	}
+	
+}
+std::string ShaderHandler::loadShaderFile(const char* filename) {
+	std::cout << "filename is: " << filename << "\n";
+
+	try {
+		std::ifstream file(filename);
+		if (!file) {
+			throw std::runtime_error("Failed to open file: " + std::string(filename));
+		}
+	
+	
 	std::stringstream buffer;
 	buffer << file.rdbuf();
+	file.close();
 	return buffer.str();
+	}
+	catch  (const std::exception& e) {
+		std::cerr << "Error: " << e.what() << std::endl;
+
+	}
 }
 
 void ShaderHandler::use() {
