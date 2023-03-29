@@ -14,17 +14,18 @@ int main() {
 
 
 	// DECLARE SHADERS
-	std::string vertexShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\vertexShader.glsl";
-	std::string fragmentShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\FragmentShader.glsl";
+	const char* vertexShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\vertexShader.glsl";
+	const char* fragmentShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\FragmentShader.glsl";
+
+	/*const char* vertexShaderPath = R"()";
+	const char* fragmentShaderPath = R"()";*/
 
 	std::cout << "vertShPath is: " << vertexShaderPath << "\n";
 	std::cout << "fragShPath is: " << fragmentShaderPath << "\n";
 
-	//const char* vertexShaderPath = "C:/Users/slaba/Desktop/uvic degree/comp csi/";
-	//const char* fragmentShaderPath = ".\\..\\GPUParticles\\src\\shaders\\FragmentShader.glsl";
 
 	// Create shader object
-	ShaderHandler displayShader(vertexShaderPath.c_str(), fragmentShaderPath.c_str());
+	ShaderHandler displayShader(vertexShaderPath, fragmentShaderPath);
 
 	// Use this shader before rendering particles
 	displayShader.use();
