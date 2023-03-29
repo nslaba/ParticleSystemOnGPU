@@ -11,7 +11,7 @@
 class ShaderHandler
 {
 public:
-	ShaderHandler(const char* vertexShaderPath, const char* fragmentShaderPath);
+	ShaderHandler(std::string vertexShaderPath, std::string fragmentShaderPath);
 	void use();
 
 	GLuint getProgramID();
@@ -20,7 +20,7 @@ private:
 	GLuint m_program;
 	GLuint m_currentProgram;
 
-	std::string loadShaderFile(const char* filename);
+	std::string loadShaderFile(std::string filename);
 	void checkShaderCompilationErrors(GLuint shader);
 	void checkProgramLinking(GLuint program);
 };

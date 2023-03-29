@@ -15,5 +15,5 @@ public:
 
 private:
 
-	ParticleSystem* particles;
+	ParticleSystem* particleSystem;
 };

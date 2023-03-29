@@ -12,37 +12,6 @@
 int main() {
 
 
-
-	// DECLARE SHADERS
-	const char* vertexShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\vertexShader.glsl";
-	const char* fragmentShaderPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\shaders\FragmentShader.glsl";
-
-	/*const char* vertexShaderPath = R"()";
-	const char* fragmentShaderPath = R"()";*/
-
-	std::cout << "vertShPath is: " << vertexShaderPath << "\n";
-	std::cout << "fragShPath is: " << fragmentShaderPath << "\n";
-
-
-	// Create shader object
-	ShaderHandler displayShader(vertexShaderPath, fragmentShaderPath);
-
-	// Use this shader before rendering particles
-	displayShader.use();
-
-	// SET UP VIEW AND PROJECTION MATRICES
-	glm::mat4 viewMatrix = glm::lookAt(glm::vec3(0.0, 0.0, 10.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
-	glm::mat4 projectionMatrix = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f); // 800 and 600 are window width and height resp
-
-	// Get the location of the viewMatrix and projectionMatrix Uniforms
-	GLuint viewMatrixLocation = glGetUniformLocation(displayShader.getProgramID(), "viewMatrix");
-	GLuint projectionMatrixLocation = glGetUniformLocation(displayShader.getProgramID() , "projectionMatrix");
-
-	// Pass Matrices as uniforms once I have location
-	glUniformMatrix4fv(viewMatrixLocation, 1, GL_FALSE, glm::value_ptr(viewMatrix));
-	glUniformMatrix4fv(projectionMatrixLocation, 1, GL_FALSE, glm::value_ptr(projectionMatrix)); //passes the matrices as 4x4 float matrices with transpose flag set to false and with data taken from glm obj
-	
-
 	/* STEP 1: compile the Processing sketch*/
 	/*std::string sketchPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\src\processingSketch\HermiteSplineSketch_pde";
 	std::string outputPath = "C:\\Users\slaba\Desktop\\uvic degree\comp sci\CSC 473\PROJECT\project\GPUParticles\GPUParticles\output";
@@ -50,13 +19,7 @@ int main() {
 	processingHandler->buildSketch(sketchPath, outputPath);*/
 
 
-	/* STEP 1: create a particle system to be drawn*/
-
-	// Create a particle system
-	ParticleSystem particleSystem(100000); // instantiates VBO in the constructor
-
-	// Create a particle simulator
-	ParticleSimulator particleSimulator(&particleSystem);
+	
 
 	
 
@@ -74,6 +37,7 @@ int main() {
 	// Set OpenGL version to 4.6
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
+	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); //core profile was introduced in openGL 3.2 to get rid of unnecessary stuff in older versions
 
 	// Create a window
 	GLFWwindow* window = glfwCreateWindow(800, 600, "My Window", nullptr, nullptr);
@@ -95,6 +59,51 @@ int main() {
 		return -1;
 	}
 
+	//////////////SHADERS/////////////////////////////
+
+	// DECLARE SHADERS
+	std::string vertexShaderPath = "C:/Users/slaba/Desktop/uvic\ degree/comp\ sci/CSC\ 473/PROJECT/project/GPUParticles/GPUParticles/src/shaders/vertexShader.glsl";
+	std::string fragmentShaderPath = "C:/Users/slaba/Desktop/uvic\ degree/comp\ sci/CSC\ 473/PROJECT/project/GPUParticles/GPUParticles/src/shaders/FragmentShader.glsl";
+
+
+	std::cout << "vertShPath is: " << vertexShaderPath << "\n";
+	std::cout << "fragShPath is: " << fragmentShaderPath << "\n";
+
+
+	// Create shader object
+	ShaderHandler displayShader(vertexShaderPath, fragmentShaderPath);
+
+	// Use this shader before rendering particles
+	displayShader.use();
+
+	// SET UP VIEW AND PROJECTION MATRICES
+	glm::mat4 viewMatrix = glm::lookAt(glm::vec3(0.0, 0.0, 10.0), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
+	glm::mat4 projectionMatrix = glm::perspective(glm::radians(45.0f), (float)800 / (float)600, 0.1f, 100.0f); // 800 and 600 are window width and height resp
+
+	// Get the location of the viewMatrix and projectionMatrix Uniforms
+	GLuint viewMatrixLocation = glGetUniformLocation(displayShader.getProgramID(), "viewMatrix");
+	GLuint projectionMatrixLocation = glGetUniformLocation(displayShader.getProgramID(), "projectionMatrix");
+
+	// Pass Matrices as uniforms once I have location
+	glUniformMatrix4fv(viewMatrixLocation, 1, GL_FALSE, glm::value_ptr(viewMatrix));
+	glUniformMatrix4fv(projectionMatrixLocation, 1, GL_FALSE, glm::value_ptr(projectionMatrix)); //passes the matrices as 4x4 float matrices with transpose flag set to false and with data taken from glm obj
+
+
+
+	////////////////////////////////////////////////
+	//////////////////// PARTICLE SYSTEM //////////////
+	
+	/* STEP 1: create a particle system to be drawn*/
+
+	// Create a particle system
+	ParticleSystem particleSystem(100000); // instantiates VBO in the constructor
+
+	// Create a particle simulator
+	ParticleSimulator particleSimulator(&particleSystem);
+
+
+
+	//////////////////////////////////////////////////
 	// Set the screen color to green
 	glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
 
@@ -104,14 +113,20 @@ int main() {
 	// Main loop
 	while (!glfwWindowShouldClose(window))
 	{
+		// Clear the color buffer
+		glClear(GL_COLOR_BUFFER_BIT);
+
 		/* PARTICLE DISPLAY*/
 
 		// Update the particles
-		particleSimulator.step(0.1);
+		particleSimulator.step(0.1); //exception err
+		// Draw particles
+		glDrawArrays(GL_POINTS, 0, particleSystem.numParticles);
 
+		// Unbind the vertex array object
+		glBindVertexArray(0);
 
-		// Clear the color buffer
-		glClear(GL_COLOR_BUFFER_BIT);
+		
 
 		// Swap the front and back buffers
 		glfwSwapBuffers(window);

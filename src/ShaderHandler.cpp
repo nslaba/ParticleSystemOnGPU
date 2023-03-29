@@ -1,9 +1,9 @@
 #include "ShaderHandler.h"
 
-ShaderHandler::ShaderHandler(const char* VertexShaderPath, const char* fragmentShaderPath)
+ShaderHandler::ShaderHandler(std::string VertexShaderPath, std::string fragmentShaderPath)
 {
 	//Load and compile vertex shader
-	std::string vertexShaderSource = loadShaderFile(vertexShaderSource.c_str());
+	std::string vertexShaderSource = loadShaderFile(VertexShaderPath);
 	const char* vertexShaderSourcePtr = vertexShaderSource.c_str();
 	// create vertex shader object
 	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
@@ -12,7 +12,7 @@ ShaderHandler::ShaderHandler(const char* VertexShaderPath, const char* fragmentS
 	checkShaderCompilationErrors(vertexShader);
 
 	//Load and compile fragment shader
-	std::string fragmentShaderSource = loadShaderFile(fragmentShaderSource.c_str());
+	std::string fragmentShaderSource = loadShaderFile(fragmentShaderPath);
 	const char* fragmentShaderSourcePtr = fragmentShaderSource.c_str();
 	//create fragment shader object
 	GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
@@ -44,8 +44,8 @@ GLuint ShaderHandler::getProgramID()
 	}
 	
 }
-std::string ShaderHandler::loadShaderFile(const char* filename) {
-	std::cout << "filename is: " << filename << "\n";
+std::string ShaderHandler::loadShaderFile(std::string filename) {
+	
 
 	try {
 		std::ifstream file(filename);
@@ -63,6 +63,7 @@ std::string ShaderHandler::loadShaderFile(const char* filename) {
 		std::cerr << "Error: " << e.what() << std::endl;
 
 	}
+	return "";
 }
 
 void ShaderHandler::use() {
